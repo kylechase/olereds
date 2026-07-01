@@ -38,11 +38,10 @@ function doPost(e) {
         'Email',
         'Phone',
         'Address',
-        'Package',
-        'Salt & De-Icing',
-        'Walkway Clearing'
+        'Best Time to Contact',
+        'Additional Details'
       ]);
-      sheet.getRange(1, 1, 1, 8).setFontWeight('bold');
+      sheet.getRange(1, 1, 1, 7).setFontWeight('bold');
     }
 
     // Append the form data
@@ -52,17 +51,12 @@ function doPost(e) {
       data.email,
       data.phone,
       data.address,
-      data.package,
-      data.addonSalt ? 'Yes' : 'No',
-      data.addonWalkway ? 'Yes' : 'No'
+      data.contactTime,
+      data.details
     ]);
 
     // Send email notification
-    const addons = [];
-    if (data.addonSalt) addons.push('Salt & De-Icing');
-    if (data.addonWalkway) addons.push('Walkway Clearing');
-
-    const subject = 'New Quote Request — Olereds Snow Clearing';
+    const subject = 'New Quote Request — Ole Reds Commercial Cleaning';
     const body = [
       'New quote request received:',
       '',
@@ -70,8 +64,10 @@ function doPost(e) {
       'Email: ' + data.email,
       'Phone: ' + data.phone,
       'Address: ' + data.address,
-      'Package: ' + data.package,
-      'Add-Ons: ' + (addons.length > 0 ? addons.join(', ') : 'None'),
+      'Best Time to Contact: ' + data.contactTime,
+      '',
+      'Additional Details and Information:',
+      data.details || 'None',
       '',
       'Submitted: ' + new Date().toLocaleString()
     ].join('\n');
@@ -90,9 +86,9 @@ function doPost(e) {
 }
 
 function getOrCreateSpreadsheet() {
-  const files = DriveApp.getFilesByName('Olereds — Form Submissions');
+  const files = DriveApp.getFilesByName('Ole Reds — Form Submissions');
   if (files.hasNext()) {
     return SpreadsheetApp.open(files.next());
   }
-  return SpreadsheetApp.create('Olereds — Form Submissions');
+  return SpreadsheetApp.create('Ole Reds — Form Submissions');
 }

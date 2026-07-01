@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Marketing/landing page for "Olereds Snow Clearing", a residential snow removal service. Built with Astro and Tailwind CSS v4, deployed to GitHub Pages.
+Marketing/landing page for "Ole Reds Commercial Cleaning", a commercial cleaning service for offices and businesses. Built with Astro and Tailwind CSS v4, deployed to GitHub Pages.
 
 ## Commands
 
@@ -26,3 +26,7 @@ Single-page static site (Astro `output: 'static'`):
 ## Deployment
 
 GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys to GitHub Pages on push to `main`. The `base` path in `astro.config.mjs` must match the GitHub repo name (currently `/olereds`).
+
+## Git Commit Conventions
+
+Do not add Claude as a co-author or contributor in commit messages (no `Co-Authored-By: Claude` trailer, no mention of Claude/Anthropic). Commits should be attributed solely to the human author.
