@@ -56,7 +56,7 @@ function doPost(e) {
     ]);
 
     // Send email notification
-    const subject = 'New Quote Request — Ole Reds Janitorial';
+    const subject = 'New Quote Request — Ole Reds Commercial Cleaning';
     const body = [
       'New quote request received:',
       '',
