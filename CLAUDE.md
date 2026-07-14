@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Marketing/landing page for "Ole Reds Commercial Cleaning", a commercial cleaning service for offices and businesses. Built with Astro and Tailwind CSS v4, deployed to GitHub Pages.
+Marketing/landing page for "Ole Reds Janitorial", a janitorial service for offices and businesses. Built with Astro and Tailwind CSS v4, deployed to GitHub Pages.
 
 ## Commands
 
